@@ -1,0 +1,326 @@
+:root{
+    --amarillo: #FFC300;
+    --rojo: #830524;
+    --azul: #0b0be0;
+    --morado: #4d0099;
+    --degradado:linear-gradient(90deg, var(--amarillo), var(--azul), var(--rojo), var(--morado));
+}
+
+*{
+    /*Modificaciones al tipo de letra*/
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+}
+
+*::selection{
+    background: var(--morado);
+    color: white;
+}
+
+html{
+    font-size: 62.4%;
+    overflow-x: hidden;
+}
+
+body{
+    background: whitesmoke;
+}
+
+section{
+    min-height: 100vh;
+    padding: 0 9%;
+    padding-top: 7.5rem;
+    padding-bottom: 2rem;
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .8rem 3rem;
+    border-radius: 5rem;
+    background: var(--degradado);
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    transition: all .3s linear;
+}
+
+.btn:hover{
+    transform: scale(1.1);
+}
+
+.heading{
+    text-align: center;
+    background: var(--morado);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    padding: 1rem;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    /*agregar sombra*/
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+header .logo{
+    font-size: 2rem;
+    color: var(--rojo);
+}
+
+header .navbar a{
+    font-size: 1.8rem;
+    margin-left: 2rem;
+    color: var(--azul);
+}
+
+/*cambio de color cuando pase el cursor con ayuda de la pseudo-clase hover*/
+header .navbar a:hover{
+    color: var(--morado);
+}
+
+header input{
+    display:none;
+}
+
+header label{
+    font-size: 3rem;
+    color: var(--morado);
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.formulario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 4rem;
+}
+
+.formulario form{
+    flex: center;
+    padding: 2rem 3rem;
+    border: .1rem solid rgba(0, 0, 0, .2);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    border-radius: .5rem;
+    background: white;
+}
+
+.formulario .heading{
+    text-align: left;
+    padding: 0;
+    padding-bottom: 2rem;
+}
+
+.formulario form .inputcaja{
+    position: relative;
+}
+
+.formulario form .inputcaja p{
+    font-size: 2rem;
+    color: black;
+}
+
+.formulario form .inputcaja input, .formulario form .inputcaja textarea{
+    width: 100%;
+    background: none;
+    color: black;
+    margin: 1.5rem 0;
+    padding: .5rem 0;
+    font-size: 1.7rem;
+    border-bottom: .1rem solid rgba(0, 0, 0, .1);
+    text-transform: none;
+}
+
+.formulario form .inputcaja textarea{
+    resize: none;
+    height: 13rem;
+}
+
+.formulario form .inputcaja label{
+    position: absolute;
+    top: 1.7rem;
+    left: 0;
+    font-size: 1.7rem;
+    transition: .2s linear;
+}
+
+.formulario form .inputcaja input:focus ~ label,
+.formulario form .inputcaja input:valid ~ label,
+.formulario form .inputcaja textarea:focus ~ label,
+.formulario form .inputcaja textarea:valid ~ label{
+    top: .5rem;
+    font-size: 1.5rem;
+    color: var(--rojo);
+}
+
+.especificaciones .caja-contenedor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.especificaciones .caja-contenedor .caja{
+    flex: 1 1 30rem;
+    background: white;
+    border-radius: .5rem;
+    border: .1rem solid rgba(0, 0, 0, .2);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    margin: 1.5rem;
+    padding: 3rem 2rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    transition: .2s linear;
+}
+
+.especificaciones .caja-contenedor .caja img{
+    height: 15rem;
+}
+
+.especificaciones .caja-contenedor .caja h3{
+    font-size: 2rem;
+    color: var(--morado);
+    padding-top: 1rem;
+}
+
+.especificaciones .caja-contenedor .caja p{
+    font-size: 1.3rem;
+    color: black;
+    padding: 1rem 0;
+}
+
+.card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.card p {
+    margin: 10px 0;
+}
+
+/*Para que se aparte a diferentes tamaños*/
+@media(max-width:1200px){
+    html{
+        font-size: 55%;
+    }
+}
+
+@media(max-width:768px){
+    header label{
+        visibility: visible;
+        opacity: 1;
+    }
+    header .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 1rem 2rem;
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        transform-origin: top;
+        transform: scaleY(0);
+        opacity: 0;
+    }
+    header .navbar a{
+        display: block;
+        margin: 2rem 0;
+        font-size: 2rem;
+    }
+    header input:checked ~ .navbar{
+        transform: scaleY(1);
+        opacity: 1;
+    }
+    /*para crear el simbolo x*/
+    header input:checked ~ label::before{
+        content: '\f00d';
+    }
+}
+
+@media(max-width:450px){
+    html{
+        font-size: 49%;
+    }
+}
+
+/*Estilo Tablas*/
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+th, td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: center;
+}
+th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+tr:hover {
+    background-color: #e0e0e0;
+}
+.btn-editar, .btn-eliminar {
+    padding: 6px 12px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btn-editar {
+    background-color: #007bff;
+    margin-right: 5px;
+}
+.btn-eliminar {
+    background-color: #dc3545;
+}
+.delete-button {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: .8rem 3rem;
+            border-radius: 5rem;
+            background: var(--degradado);
+            font-size: 1.8rem;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+            transition: all .3s linear;
+        }
